@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jun 13 10:57:51 2020
+
+@author: zhuxinyan
+"""
+
+
+math = []
+highest=0
+lowest =100
+total=0
+
+n = input('班上有几人？')
+
+n = int(n)
+print(n)
+
+for i in range (n):
+    name = input('请输入你的名字')
+    score = input('你的分数')
+    score = int(score)
+    
+    
+    oneperson = list()
+    oneperson.append(name)
+    oneperson.append(score)
+    math.append(oneperson)
+
+print(math)
+for i in math:
+    total = total+i[1]
+average = total / n
+print("The average is", average)
+
+high = 0
+person=' '
+for i in math:
+    if i[1] > high:
+        high = i[1]
+        person=i[0]
+        
+low=100
+person=' '
+for item in math:
+    if item[1] < low:
+        low = item[1]
+        person=item[0]
+print(person, "got the lowest score", low)
+
+
+
+
+print("平均分：",average)
+print("最高分：",highest)
+print("最低分：",lowest)
+
+
+
+
