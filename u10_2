@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jul 25 10:53:24 2020
+
+@author: zhuxinyan
+"""
+
+
+letters= 'sdfghjklgjffsfgudyjtdatudgfstfylfydydg'
+print(letters[5])
+print(letters[-2])
+print(letters[1:6])
+print(letters[10:])
+
+letters= 'a duck goes into a bar'
+print(letters.capitalize())
+print(letters.titel())
+print(letters.upper)
+print(letters.swapcase())
+
+string = 'this is string example...'
+print(letters.split())
+print(letters.split('i'))
+print(letters.split('i',1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
