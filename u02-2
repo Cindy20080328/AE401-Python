@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct 31 10:06:05 2020
+
+@author: zhuxinyan
+"""
+
+
+import pygame,random
+
+red=(255,0,0)
+orange1=(255,153,0)
+orange2=(255,130,0)
+brown=(128,42,42)
+black=(0,0,0)
+white=(255,255,255)
+
+pygame.init 
+size=(1000,1000)
+screen=pygame.display.set_mode(size)
+ 
+pygame.display.set_caption("apple")
+snow_list=[]
+for i in range(6000):
+    x=random.randrange(0,1000)
+    y=random.randrange(0,1000)
+    snow_list.append([x,y])
+
+x=False
+clock=pygame.time.Clock()
+
+while not x:
+    
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            x=True
+        screen.fill(black)
+    for i in range(len(snow_list)):
+        pygame.circle(screen,white,snow_list[i],2)
+        snow_list[i][1] +=1
+        if snow_list[i][1] > 700:
+            y=random.randrange(-50,-10)
+            snow_list[i][1]=y
+            x=random.randrange(-50,-10)
+            snow_list[i][1]=x
+            
+            
+        
+    #pygame.draw.circle(画布，颜色，（x，y)，r，w）
+    pygame.draw.circle(screen,orange1,[150,200],130)
+    pygame.draw.circle(screen,orange2,[180,200],130)
+    pygame.draw.circle(screen,orange1,[210,200],130)
+    pygame.draw.circle(screen,orange2,[230,200],130)
+    pygame.draw.circle(screen,orange1,[200,200],130)
+    pygame.draw.circle(screen,black,[150,120],25,0)
+    pygame.draw.circle(screen,black,[250,120],25,0)
+    
+    #pygame.draw.circle(画布，颜色，（x坐标，y坐标，x直径，y直径)，起始角，结束角，线宽）
+    pygame.draw.ellipse(screen,red,[185,130,30,30],0)
+    pygame.draw.ellipse(screen,brown,[185,20,35,50],0)
+    
+    
+    #pygame.draw.circle(画布，颜色，（x坐标，y坐标，x直径，y直径)，线宽）
+
+    pygame.draw.arc(screen,red,[130,100,150,120],3.4,6.1,30) 
+ 
+pygame.display.flip()
+clock.tick(60)
+
+pygame.quit()
+
+
+
+
+
+
+
